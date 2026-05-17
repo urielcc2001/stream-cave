@@ -1,6 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue'
-import { router, usePage } from '@inertiajs/vue3'
+import { router, usePage, Link } from '@inertiajs/vue3'
 import MediaCard from '@/Components/MediaCard.vue'
 
 const props = defineProps({
@@ -73,8 +73,8 @@ const user = usePage().props.auth.user
 
                 <!-- User -->
                 <span class="text-sm text-gray-300">{{ user.name }}</span>
-                <a :href="route('logout')" method="post" as="button"
-                   class="text-sm text-gray-400 hover:text-white">Salir</a>
+                <Link :href="route('logout')" method="post" as="button"
+                      class="text-sm text-gray-400 hover:text-white">Salir</Link>
             </div>
         </header>
 
